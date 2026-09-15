@@ -90,7 +90,7 @@ const manifest = {
   forge: {
     version: forgeVersion,
     installerUrl:
-      `http://worldofdisneycraft.fr/download/forge-1.21.1-52.1.16-installer.jar`
+      `https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-52.1.0/forge-1.21.1-52.1.0-installer.jar`
   },
   server: { ip: L.serverIp || 'wotd.djmathis.fr', port: L.serverPort || 25565 },
   mods
