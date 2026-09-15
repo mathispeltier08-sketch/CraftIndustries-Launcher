@@ -50,8 +50,7 @@
       {
         "provider": "github",
         "owner": "mathispeltier08-sketch",
-        "repo": "CraftIndustries-Launcher",
-        "releaseType": "realease"
+        "repo": "CraftIndustries-Launcher"
       }
     ],
     "linux": {
