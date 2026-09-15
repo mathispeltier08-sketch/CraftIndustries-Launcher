@@ -1,6 +1,6 @@
 appId: com.prototypexk.craftindustries
-productName: CraftIndustries Launcher
-copyright: Copyright © 2026 prototype-xk
+productName: World Of Diney Craft Launcher
+copyright: Copyright © 2026 World Of Disney Craft
 
 directories:
   output: dist
@@ -27,7 +27,7 @@ nsis:
   allowToChangeInstallationDirectory: true
   createDesktopShortcut: true
   createStartMenuShortcut: true
-  shortcutName: CraftIndustries Launcher
+  shortcutName: World Of Disney Craft
 
 # ===================== macOS =====================
 # dmg = installeur ; zip = requis pour l'auto-update macOS.
