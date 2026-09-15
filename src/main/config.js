@@ -30,7 +30,7 @@ const MANIFEST_URL =
 const NEWS_URL =
   `https://raw.githubusercontent.com/${repo.owner}/${repo.repo}/${repo.branch}/news.json`;
 
-const serverName = L.serverName || 'CraftIndustries';
+const serverName = L.serverName || 'World Of Disney Craft';
 const discordAppId = L.discordAppId || '';
 const discordWebhook = process.env.CRAFT_DISCORD_WEBHOOK || secrets.discordWebhook || L.discordWebhook || '';
 const discordButtonUrl = L.discordButtonUrl || '';
