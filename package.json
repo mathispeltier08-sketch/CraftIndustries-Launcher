@@ -52,6 +52,9 @@
         "owner": "mathispeltier08-sketch",
         "repo": "CraftIndustries-Launcher"
       }
-    ]
+    ],
+    "linux": {
+      "target": ["AppImage"]
+      }
+    }
   }
-}
