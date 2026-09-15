@@ -1,14 +1,13 @@
 name: Build & Release Launcher
 
-# Se déclenche quand vous poussez un tag de version, ex : v1.0.0
 on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch:   # permet aussi un lancement manuel depuis l'onglet Actions
+  workflow_dispatch:   # Permet le lancement manuel direct depuis l'onglet Actions
 
 permissions:
-  contents: write   # nécessaire pour publier la release et les fichiers latest*.yml
+  contents: write   # Nécessaire pour créer la release et téléverser les fichiers sur GitHub
 
 jobs:
   release:
@@ -25,15 +24,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24   # Mis à jour pour éviter les erreurs Node 20
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      # Injecte le webhook Discord (partage de captures) depuis un secret du dépôt,
-      # SANS jamais le mettre dans le code. Configurez-le dans :
-      # Settings → Secrets and variables → Actions → New repository secret → DISCORD_WEBHOOK
       - name: Inject secrets
         shell: bash
         env:
@@ -46,9 +42,21 @@ jobs:
             echo "Pas de secret DISCORD_WEBHOOK — partage de captures désactivé dans ce build"
           fi
 
+      # MODIFIÉ : On ajoute "-- --publish always" pour forcer l'envoi vers l'onglet Releases
       - name: Build & publish (electron-builder -> GitHub Releases)
-        run: npm run publish
+        run: npm run publish -- --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Pas de signature de code sur le CI (pas de certificat Apple/Windows).
           CSC_IDENTITY_AUTO_DISCOVERY: false
+
+      # AJOUTÉ : Ce bloc force GitHub à sauvegarder les fichiers dans l'onglet Actions (Artifacts)
+      - name: Sauvegarder les exécutables (Artifacts Actions)
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.os }}
+          path: |
+            dist/*.exe
+            dist/*.dmg
+            dist/*.AppImage
+            dist/latest*.yml
+          if-no-files-found: warn
