@@ -177,7 +177,7 @@ function setupTray() {
     let img = nativeImage.createFromPath(ICON);
     if (!img.isEmpty()) img = img.resize({ width: 18, height: 18 });
     tray = new Tray(img);
-    tray.setToolTip('CraftIndustries Launcher');
+    tray.setToolTip('World OF Disney Craft Launcher');
     tray.setContextMenu(Menu.buildFromTemplate([
       { label: 'Afficher', click: () => { if (win) { win.show(); win.focus(); } } },
       { type: 'separator' },
@@ -363,7 +363,7 @@ ipcMain.handle('game:play', async () => {
       onStarted: () => {
         sessionStart = Date.now();
         discord.setPlaying(authorization.name);
-        notify('CraftIndustries', quickPlay ? 'Connexion au serveur en cours…' : 'Minecraft est lancé !');
+        notify('World Of Disney Craft', quickPlay ? 'Connexion au serveur en cours…' : 'Minecraft est lancé !');
         send('status', quickPlay ? 'Connexion au serveur...' : 'Minecraft est lancé. Bon jeu !');
         send('started');
         if (!settings.keepLauncherOpen) setTimeout(() => win && !win.isDestroyed() && win.hide(), 5000);
