@@ -1,23 +1,23 @@
 {
-  "name": "craftindustries-launcher",
+  "name": "wodc",
   "version": "1.0.3",
-  "description": "Launcher custom pour le serveur Minecraft moddé CraftIndustries (Forge) avec authentification Microsoft et mises à jour via GitHub.",
+  "description": "",
   "main": "src/main/main.js",
-  "author": "prototype-xk",
-  "license": "MIT",
+  "author": "",
+  "license": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/prototype-xk/CraftIndustries-Launcher.git"
+    "url": "https://github.com/mathispeltier08-sketch/CraftIndustries-Launcher.git"
   },
   "launcher": {
     "branch": "main",
-    "serverName": "CraftIndustries",
-    "minecraft": "1.20.1",
-    "forge": "47.3.0",
-    "serverIp": "37.187.153.71",
-    "serverPort": 25566,
-    "discordAppId": "1519289211919011900",
-    "discordButtonUrl": "https://discord.gg/cqdMd2TW4u",
+    "serverName": "World Of Disney Craft",
+    "minecraft": "1.21.1",
+    "forge": "56.1.16",
+    "serverIp": "wodc.djmathis.fr",
+    "serverPort": 25565,
+    "discordAppId": "",
+    "discordButtonUrl": "https://discord.gg/cMaTCejm5S",
     "discordButtonLabel": "Rejoindre le Discord",
     "discordWebhook": ""
   },
