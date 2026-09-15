@@ -1,29 +1,27 @@
 {
-  "name": "WorldOfDisneyCraft",
+  "name": "World Of Disney Craft",
   "version": "modpack-v1",
   "minecraft": "1.21.1",
   "forge": {
-    "version": "52.1.16",
-    "installerUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-52.1.16/forge-1.21.1-52.1.16-installer.jar"
+    "version": "56.1.16",
+    "installerUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-56.1.16/forge-1.21.1-56.1.16-installer.jar"
   },
   "server": {
     "ip": "wodc.djmathis.fr",
     "port": 25565
   },
-  "admins": [
-    ""
-  ],
-  "mods": [Custom NPCs, Path Finder],
-  "allowedMods": [Iris],
-  "changelog": [
+  "mods": [
     {
-      "version": "modpack-v1",
-      "date": "2026-06-23",
-      "entries": [
-        "Premier Essais Staff Only",
-        "Base Forge 1.21.1",
-        "Custom NPC"
-      ]
+      "name": "CustomNPCs-1.20.1-GBPort-Unofficial-1.20.1.20260711.jar",
+      "url": "https://github.com/mathispeltier08-sketch/CraftIndustries-Launcher/releases/download/modpack-v1/CustomNPCs-1.20.1-GBPort-Unofficial-1.20.1.20260711.jar",
+      "sha1": "c1a973b55f6f67e9fdeb197195e490ba92146381",
+      "size": 10873769
+    },
+    {
+      "name": "pathfinder-1.1.0.jar",
+      "url": "https://github.com/mathispeltier08-sketch/CraftIndustries-Launcher/releases/download/modpack-v1/pathfinder-1.1.0.jar",
+      "sha1": "6aa1482a713ae7c3f1c6a9a83d736109278ede01",
+      "size": 23063
     }
   ]
 }
