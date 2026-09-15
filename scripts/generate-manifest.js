@@ -41,8 +41,8 @@ const repo = m[2];
 const dl = (file) => `https://github.com/${owner}/${repo}/releases/download/${tag}/${encodeURIComponent(file)}`;
 
 const L = pkg.launcher || {};
-const minecraft = L.minecraft || '1.21.1';
-const forgeVersion = L.forge || '52.1.0';
+const minecraft = L.minecraft || '1.20.1';
+const forgeVersion = L.forge || '47.3.0';
 
 function sha1(buf) { return crypto.createHash('sha1').update(buf).digest('hex'); }
 
@@ -84,15 +84,16 @@ if (fs.existsSync(overridesDir) && listFiles(overridesDir).length > 0) {
 
 /* ---------- Manifeste ---------- */
 const manifest = {
-  name: L.serverName || 'World Of Disney Craft',
+  name: L.serverName || 'CraftIndustries',
   version: tag,
   minecraft,
   forge: {
     version: forgeVersion,
     installerUrl:
-      `https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-52.1.0/forge-1.21.1-52.1.0-installer.jar`
+      `https://maven.minecraftforge.net/net/minecraftforge/forge/` +
+      `${minecraft}-${forgeVersion}/forge-${minecraft}-${forgeVersion}-installer.jar`
   },
-  server: { ip: L.serverIp || 'wotd.djmathis.fr', port: L.serverPort || 25565 },
+  server: { ip: L.serverIp || 'play.exemple.fr', port: L.serverPort || 25565 },
   mods
 };
 if (overrides) manifest.overrides = overrides;

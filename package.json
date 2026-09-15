@@ -13,7 +13,7 @@
     "branch": "main",
     "serverName": "World Of Disney Craft",
     "minecraft": "1.21.1",
-    "forge": "52.1.0",
+    "forge": "52.1.16",
     "serverIp": "wodc.djmathis.fr",
     "serverPort": 25565,
     "discordAppId": "",
