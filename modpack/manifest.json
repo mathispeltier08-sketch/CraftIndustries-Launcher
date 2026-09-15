@@ -4,7 +4,7 @@
   "minecraft": "1.21.1",
   "forge": {
     "version": "56.1.16",
-    "installerUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-56.1.16/forge-1.21.1-56.1.16-installer.jar"
+    "installerUrl": "http://worldofdisneycraft.fr/download/forge-1.21.1-52.1.16-installer.jar"
   },
   "server": {
     "ip": "wodc.djmathis.fr",

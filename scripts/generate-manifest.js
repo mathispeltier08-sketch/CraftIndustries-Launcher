@@ -84,16 +84,15 @@ if (fs.existsSync(overridesDir) && listFiles(overridesDir).length > 0) {
 
 /* ---------- Manifeste ---------- */
 const manifest = {
-  name: L.serverName || 'CraftIndustries',
+  name: L.serverName || 'World Of Disney Craft',
   version: tag,
   minecraft,
   forge: {
     version: forgeVersion,
     installerUrl:
-      `https://maven.minecraftforge.net/net/minecraftforge/forge/` +
-      `${minecraft}-${forgeVersion}/forge-${minecraft}-${forgeVersion}-installer.jar`
+      `http://worldofdisneycraft.fr/download/forge-1.21.1-52.1.16-installer.jar`
   },
-  server: { ip: L.serverIp || 'play.exemple.fr', port: L.serverPort || 25565 },
+  server: { ip: L.serverIp || 'wotd.djmathis.fr', port: L.serverPort || 25565 },
   mods
 };
 if (overrides) manifest.overrides = overrides;
