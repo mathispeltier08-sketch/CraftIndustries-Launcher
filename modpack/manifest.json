@@ -1,28 +1,28 @@
 {
-  "name": "CraftIndustries",
+  "name": "WorldOfDisneyCraft",
   "version": "modpack-v1",
-  "minecraft": "1.20.1",
+  "minecraft": "1.21.1",
   "forge": {
-    "version": "47.3.0",
-    "installerUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.3.0/forge-1.20.1-47.3.0-installer.jar"
+    "version": "52.1.16",
+    "installerUrl": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-52.1.16/forge-1.21.1-52.1.16-installer.jar"
   },
   "server": {
-    "ip": "37.187.153.71",
-    "port": 25566
+    "ip": "wodc.djmathis.fr",
+    "port": 25565
   },
   "admins": [
-    "c2d7a0606a6f442089e4a9dc4e726291"
+    ""
   ],
-  "mods": [],
-  "allowedMods": [],
+  "mods": [Custom NPCs, Path Finder],
+  "allowedMods": [Iris],
   "changelog": [
     {
       "version": "modpack-v1",
       "date": "2026-06-23",
       "entries": [
-        "Lancement initial du modpack CraftIndustries",
-        "Base Forge 1.20.1",
-        "Configs et scripts KubeJS inclus automatiquement"
+        "Premier Essais Staff Only",
+        "Base Forge 1.21.1",
+        "Custom NPC"
       ]
     }
   ]
