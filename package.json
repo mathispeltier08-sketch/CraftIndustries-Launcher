@@ -13,7 +13,7 @@
     "branch": "main",
     "serverName": "World Of Disney Craft",
     "minecraft": "1.21.1",
-    "forge": "56.1.16",
+    "forge": "52.1.0",
     "serverIp": "wodc.djmathis.fr",
     "serverPort": 25565,
     "discordAppId": "",
@@ -36,7 +36,7 @@
     "msmc": "^5.0.5"
   },
   "devDependencies": {
-    "electron": "^31.7.7",
+    "electron": "^44.3.0",
     "electron-builder": "^26.0.0"
   },
   "allowScripts": {
@@ -54,7 +54,9 @@
       }
     ],
     "linux": {
-      "target": ["AppImage"]
-      }
+      "target": [
+        "AppImage"
+      ]
     }
   }
+}
