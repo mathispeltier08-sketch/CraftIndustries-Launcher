@@ -42,5 +42,19 @@
   "allowScripts": {
     "electron@31.7.7": true,
     "electron-winstaller@5.4.0": true
+  },
+  "build": {
+    "appId": "com.wodc.id",
+    "productName": "World Of Disney Craft",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "mathispeltier08-sketch",
+        "repo": "CraftIndustries-Launcher"
+      }
+    ],
+    "linux": {
+      "target": ["AppImage"]
+      }
+    }
   }
-}

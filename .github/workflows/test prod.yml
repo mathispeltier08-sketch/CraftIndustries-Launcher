@@ -1,0 +1,57 @@
+name: Build & Release Launcher
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:   # Permet le lancement manuel direct depuis l'onglet Actions
+
+permissions:
+  contents: write   # Nécessaire pour créer la release et téléverser les fichiers sur GitHub
+
+jobs:
+  release:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24   # Version 24 stable
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # === FIX POUR UBUNTU : Installe les outils de packaging Linux ===
+      - name: Install Linux Packaging Dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby-full rpm libarchive-tools
+          sudo gem install fpm
+
+      - name: Inject secrets
+        shell: bash
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ -n "$DISCORD_WEBHOOK" ]; then
+            printf '{ "discordWebhook": "%s" }' "$DISCORD_WEBHOOK" > src/main/secrets.json
+            echo "secrets.json injecté"
+          else
+            echo "Pas de secret DISCORD_WEBHOOK — partage de captures désactivé dans ce build"
+          fi
+
+      - name: Build & publish (electron-builder -> GitHub Releases)
+        run: npm run publish -- --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
